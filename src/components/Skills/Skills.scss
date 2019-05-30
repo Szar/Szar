@@ -1,0 +1,72 @@
+@import '../../sass/variables';
+
+#skills {
+	.col {
+
+		.row,
+		.col {
+			h4 {
+				text-align: left;
+			}
+
+			@media (max-width: 1100px) {
+				display: block;
+				width: 100%;
+			}
+		}
+	}
+
+	.col,
+	.row {
+		@media (max-width: 520px) {
+			display: block;
+			width: 100%;
+		}
+	}
+
+	.skills {
+		margin: 0;
+		padding: 0px;
+
+		li {
+			margin-left: 0px;
+		}
+
+		margin-bottom: 40px;
+		display: table;
+		width: 100%;
+	}
+
+	.skill {
+		font-family: "Source Code Pro", monospace;
+		padding: 0;
+		line-height: 130%;
+		margin-bottom: 5px;
+		font-weight: 600;
+		font-size: 0.95rem;
+		line-height: 1.4;
+		color: $color-background;
+		display: block;
+		clear: both;
+		float: left;
+
+		@media (max-width: 520px) {
+			clear: none;
+			margin-right: 15px;
+			margin-bottom: 6px;
+			position: relative;
+		}
+	}
+
+	.level-1 {
+		color: #00d5d8;
+	}
+
+	.level-2 {
+		color: #62fcff;
+	}
+
+	.level-3 {
+		color: #a6fdff;
+	}
+}
