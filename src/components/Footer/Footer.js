@@ -8,11 +8,13 @@ class Footer extends React.Component {
 			<section id={this.props.id}>
 				<div className="container">
 					<div className="icons">
+						{config.contact.linkedin!==null &&
 						<div className="icon">
 							<a href={config.contact.linkedin} target="_blank" rel="noopener noreferrer">
 								<i className="fa fa-linkedin" aria-hidden="true"></i>
 							</a>
 						</div>
+						}
 						<div className="icon">
 							<a href={config.contact.github} target="_blank" rel="noopener noreferrer">
 								<i className="fa fa-github-alt" aria-hidden="true"></i>
