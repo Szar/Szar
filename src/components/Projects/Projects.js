@@ -8,8 +8,11 @@ class Projects extends React.Component {
 		super(props, context);
 		this.projects = config.projects.map(this.figure)
 	}
+	tags(d) {
 
+	}
 	figure(d,i) {
+		console.log(d.tags);
 		var figure = <>
 			<img className="img-responsive" src={`/images/${d.thumb}`} alt={ d.title } />
 			<div className="figure-overlay">
@@ -18,6 +21,8 @@ class Projects extends React.Component {
 						<div className="client">{ d.client }</div>
 						<div className="title">{ d.title }</div>
 						<div className="date">{ d.date }</div>
+						
+						{ typeof d.tags=='undefined' ? null : (<div className="tags">{d.tags.map((t, i) => <div class="tag" key={i}>{t}</div>)}</div>)}
 					</div>
 				</div>
 			</div>

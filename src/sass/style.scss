@@ -233,15 +233,16 @@ h4 {
 
 section:not(#contact) {
 	min-height: 100vh;
-	display: table;
+	display: flex;
+    align-items: center;
 	width: 100%;
 	position: relative;
 
 	>div {
-		display: table-cell;
-		vertical-align: middle;
+		width: 100%;
 	}
 }
+
 
 .sl-overlay {
 	background: #000;
@@ -317,5 +318,25 @@ section:not(#contact) {
 
 	60% {
 		transform: translateY(-2px);
+	}
+}
+
+.tags {
+	display: table;
+	width: auto;
+	margin: 8px auto auto;
+	.tag {
+		display: block;
+		float: left;
+		background: $color-primary;
+		background: #00c2c5;
+		color: #fff;
+		padding: 6px 12px;
+		line-height: 1;
+		margin: 3px;
+		border-radius: 40px;
+		text-transform: uppercase;
+		font-weight: 600;
+
 	}
 }
