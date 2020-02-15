@@ -12,10 +12,15 @@ class Home extends React.Component {
 		});
 	}
 	title() {
-		return <h1 id="coded">{config.title.split(".")
+		var i = 0,
+			h1 = <h1 id="coded">{config.title.split(".")
 			.map(function(d){ return d })
-			.reduce(function(p,c){ return [p, <span className="highlight">.</span>, c] })
-		}</h1>
+			.reduce(function(p,c){ 
+				i+=1;
+				return [p, <span key={i} className="highlight">.</span>, c] 
+			})
+		}</h1>;
+		return h1;
 	}
 	render() {
 		return (

@@ -18,6 +18,7 @@ class App extends React.Component {
 		this.createAnimations();
 		enterView({
 			selector: '.animated',
+			once: true,
 			enter: function(e){
 				if(e.style.opacity!==1) {
 					e.style.opacity = 1;
@@ -40,7 +41,7 @@ class App extends React.Component {
 		return (
 			<div className="App">
 				<Helmet>
-					<meta name="robots" content="noindex,follow" />
+					{window.location.hostname==='hennessy.co.de'?<meta name="robots" content="noindex,follow" />:null}
 					<title>{config.title}</title>
 					<meta name="description" content={config.description} />
 				</Helmet>

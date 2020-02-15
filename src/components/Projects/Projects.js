@@ -12,17 +12,20 @@ class Projects extends React.Component {
 
 	}
 	figure(d,i) {
-		console.log(d.tags);
+		//console.log(d.tags);
 		var figure = <>
-			<img className="img-responsive" src={`/images/${d.thumb}`} alt={ d.title } />
+			<picture className="img-responsive">
+				<source srcSet={`/images/${d.thumb.replace('thumb/','webp/').replace('.jpg','.webp').replace('.png','.webp').replace('.jpeg','.webp')}`} type="image/webp" />
+				<img src={`/images/${d.thumb}`} alt={ d.title } />
+			</picture>
 			<div className="figure-overlay">
 				<div className="overlay-container">
 					<div className="inner">
 						<div className="client">{ d.client }</div>
 						<div className="title">{ d.title }</div>
-						<div className="date">{ d.date }</div>
+						{typeof d.date!=='undefined' && d.date!="" ?<div className="date">{ d.date }</div>:null}
 						
-						{ typeof d.tags=='undefined' ? null : (<div className="tags">{d.tags.map((t, i) => <div class="tag" key={i}>{t}</div>)}</div>)}
+						{ typeof d.tags=='undefined' ? null : (<div className="tags">{d.tags.map((t, i) => <div className="tag" key={i}>{t}</div>)}</div>)}
 					</div>
 				</div>
 			</div>
